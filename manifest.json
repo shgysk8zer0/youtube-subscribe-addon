@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "name": "__MSG_extensionName__",
+  "developer": {
+    "name": "Chris Zuber",
+    "url": "https://shgysk8zer0.github.io"
+  },
+  "version": "0.1.0",
+  "description": "__MSG_extensionDescription__",
+  "homepage_url": "https://github.com/shgysk8zer0/youtube-subscribe-addon",
+  "icons": {
+    "48": "img/youtube.svg"
+  },
+  "default_locale": "en",
+  "permissions": [],
+  "page_action": {
+    "default_icon": "img/youtube.svg",
+    "default_title": "__MSG_pageActionTooltip__",
+    "browser_style": true
+  },
+  "options_ui": {
+    "page": "options.html",
+    "browser_style": true
+  },
+  "background": {
+    "scripts": ["js/index.js"]
+  },
+  "content_scripts": [{
+    "matches": ["https://www.youtube.com/*"],
+    "js": ["js/index.js"]
+  }]
+}
