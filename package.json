@@ -1,0 +1,69 @@
+{
+  "name": "youtube-subscribe-addon",
+  "version": "0.1.0",
+  "description": "A Firefox Add-On to add a subscribe button on YouTube into the Awesome Bar",
+  "keywords": [
+    "YouTube",
+    "feeds",
+    "add-ons",
+    "web-extension"
+  ],
+  "author": {
+    "name": "Chris Zuber",
+    "email": "chris@chriszuber.com",
+    "url": "https://shgysk8zer0.github.io"
+  },
+  "contributors": [],
+  "homepage": "",
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://shgysk8zer0.github.com/youtube-subscribe-addon"
+  },
+  "bugs": {
+    "url": "https://shgysk8zer0.github.com/youtube-subscribe-addon/issues"
+  },
+  "engines": {
+    "npm": ">=3.5"
+  },
+  "scripts": {
+    "git:fetch": "git fetch --prune --tags",
+    "git:submodules": "git submodule update --init --recursive",
+    "build": "npm run build:all",
+    "build:all": "npm run build:icons",
+    "build:css": "postcss css/styles/index.css -o css/styles/index.min.css -u postcss-import postcss-cssnext cssnano -m",
+    "build:js": "rollup -c",
+    "build:icons": "svg-sprite-generate -c img/icons.csv -o icons.svg",
+    "build:ext": "web-ext build -i .git/ node_modules/ screenshot.png package.json img/ docs/ web-ext-artifacts/ '*.log*' -o",
+    "lint:js": "eslint .",
+    "lint:ext": "web-ext lint -i node_modules/ img/ rollup.config.js",
+    "browser": "npm run browser:stable",
+    "browser:stable": "web-ext run",
+    "browser:beta": "web-ext run -f beta",
+    "browser:nightly": "web-ext run -f nightly",
+    "test": "npm run lint:js && npm run lint:ext",
+    "upload": "web-ext sign -i node_modules/ img/ rollup.config.js screenshot.png web-ext-artifacts/",
+    "postinstall": "npm run git:fetch && npm run git:submodules && npm run build:all"
+  },
+  "devDependencies": {
+    "eslint": "^3.10.0",
+    "eslint-plugin-async-await": "0.0.0",
+    "eslint-plugin-babel": "^4.1.2",
+    "stylelint": "^8.1.1",
+    "stylelint-config-recommended": "^1.0.0",
+    "stylelint-config-standard": "^17.0.0",
+    "web-ext": "^2.2.2"
+  },
+  "dependencies": {
+    "cssnano": "^3.10.0",
+    "postcss": "^5.2.14",
+    "postcss-cli": "^3.0.0-beta",
+    "postcss-load-config": "^1.2.0",
+    "postcss-cssnext": "^2.9.0",
+    "postcss-import": "^9.1.0",
+    "postcss-url": "^5.1.2",
+    "svg-sprite-generator": "0.0.1",
+    "rollup": "^0.50.0",
+    "rollup-plugin-uglify": "^2.0.1"
+  }
+}
