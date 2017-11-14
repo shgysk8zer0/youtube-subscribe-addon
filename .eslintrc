@@ -28,6 +28,7 @@
     },
     "globals": {
         "URLSearchParams": false,
-        "ga": false
+        "ga": false,
+        "browser": false
     }
 }

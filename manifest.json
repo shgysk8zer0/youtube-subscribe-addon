@@ -1,32 +1,23 @@
 {
   "manifest_version": 2,
-  "name": "__MSG_extensionName__",
+  "name": "YouTube Feeds",
   "developer": {
     "name": "Chris Zuber",
     "url": "https://shgysk8zer0.github.io"
   },
   "version": "0.1.0",
-  "description": "__MSG_extensionDescription__",
+  "description": "Firefox extension to expose YouTube channel and playlist feeds",
   "homepage_url": "https://github.com/shgysk8zer0/youtube-subscribe-addon",
   "icons": {
-    "48": "img/youtube.svg"
+    "48": "img/icon.svg"
   },
   "default_locale": "en",
-  "permissions": [],
+  "permissions": ["tabs"],
   "page_action": {
-    "default_icon": "img/youtube.svg",
-    "default_title": "__MSG_pageActionTooltip__",
-    "browser_style": true
-  },
-  "options_ui": {
-    "page": "options.html",
+    "default_icon": "img/icon.svg",
     "browser_style": true
   },
   "background": {
     "scripts": ["js/index.js"]
-  },
-  "content_scripts": [{
-    "matches": ["https://www.youtube.com/*"],
-    "js": ["js/index.js"]
-  }]
+  }
 }
