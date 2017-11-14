@@ -1,6 +1,7 @@
 /patches/
 *.patch
 /node_modules/
+/web-ext-artifacts/
 /_site/
 /npm-debug.log
 /img/icons.svg
