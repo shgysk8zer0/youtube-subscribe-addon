@@ -42,7 +42,12 @@ async function scanTab(tab) {
 		});
 		browser.pageAction.show(tabId);
 	} else {
+		browser.pageAction.setIcon({
+			tabId,
+			path: icons.disabled,
+		});
 		browser.pageAction.hide(tabId);
+
 	}
 }
 
