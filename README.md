@@ -9,11 +9,11 @@ Displays a subscribe button in the Awesome Bar for YouTube channels
 [![GitHub issues](https://img.shields.io/github/issues/shgysk8zer0/youtube-subscribe-addon.svg)](https://github.com/shgysk8zer0/youtube-subscribe-addon/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/shgysk8zer0/youtube-subscribe-addon.svg)](https://github.com/shgysk8zer0/youtube-subscribe-addon/pulls)
 [![Join the chat at https://gitter.im/youtube-subscribe-addon/Lobby](https://badges.gitter.im/youtube-subscribe-addon/Lobby.svg)](https://gitter.im/youtube-subscribe-addon/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-<!--
-[![Mozilla Add-on](https://img.shields.io/amo/v/youtube-subscribe-addon.svg)](https://addons.mozilla.org/en-US/firefox/addon/youtube-subscribe-addon/)
-[![Mozilla Add-on](https://img.shields.io/amo/users/youtube-subscribe-addon.svg)](https://addons.mozilla.org/en-US/firefox/addon/youtube-subscribe-addon/statistics/)
-[![Mozilla Add-on](https://img.shields.io/amo/stars/youtube-subscribe-addon.svg)](https://addons.mozilla.org/en-US/firefox/addon/youtube-subscribe-addon/reviews/)
--->
+
+[![Mozilla Add-on](https://img.shields.io/amo/v/youtube-subscribe-addon.svg)](https://addons.mozilla.org/en-US/firefox/addon/youtube-feeds/)
+[![Mozilla Add-on](https://img.shields.io/amo/users/youtube-subscribe-addon.svg)](https://addons.mozilla.org/en-US/firefox/addon/youtube-feeds/statistics/)
+[![Mozilla Add-on](https://img.shields.io/amo/stars/youtube-subscribe-addon.svg)](https://addons.mozilla.org/en-US/firefox/addon/youtube-feeds/reviews/)
+
 <!--
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/nimelepbpejjlbmoobocpfnjhihnpked.svg)]()
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/rating-count/nimelepbpejjlbmoobocpfnjhihnpked.svg)]()
