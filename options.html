@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>YouTub RSS Options</title>
+		<meta charset="UTF-8" />
+		<script src="js/options.js" async=""></script>
+		<link rel="stylesheet" href="css/options.css" media="all" />
+	</head>
+	<body>
+		<!-- https://developer.mozilla.org/en-US/Add-ons/WebExtensions/user_interface/Options_pages -->
+		<form name="options">
+			<fieldset>
+				<legend>Subscribe Using</legend>
+				<label for="subscribe-rss" class="browser-style-label" title="Select icon">
+					<img width="32" height="32" src="img/rss.svg" />
+					<span>RSS</span>
+				</label>
+				<input type="radio" name="service" id="subscribe-rss" value="rss" checked="" />
+				<label for="subscribe-feedly" class="browser-style-label" title="Select icon">
+					<img width="32" height="32" src="img/feedly.svg" />
+					<span>Feedly</span>
+				</label>
+				<input type="radio" name="service" value="feedly" id="subscribe-feedly" />
+			</fieldset>
+		</form>
+	</body>
+</html>

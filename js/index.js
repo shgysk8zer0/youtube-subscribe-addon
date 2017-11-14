@@ -1,4 +1,32 @@
+const storage = browser.storage.sync;
+
+const defaultOpts = {
+	service: 'rss',
+};
+
+const handlers = {
+	feedly: function(url) {
+		const feedly = new URL('https://feedly.com/i/subscription/feed/');
+		feedly.pathname += encodeURIComponent(url.toString());
+		browser.tabs.create({
+			url: feedly.toString(),
+		});
+	},
+	rss: function(url) {
+		browser.tabs.create({
+			url: url.toString(),
+		});
+	}
+};
+
+const icons = {
+	default: 'img/icon.svg',
+	disabled: 'img/disabled.svg',
+};
+
 async function scanTab(tab) {
+	console.log(tab);
+	const tabId = tab.id || tab.tabId;
 	const url = new URL(tab.url);
 
 	if (url.host === 'www.youtube.com' && (
@@ -6,12 +34,21 @@ async function scanTab(tab) {
 		|| url.pathname.startsWith('/user/')
 		|| url.searchParams.has('list')
 	)) {
-		browser.pageAction.show(tab.id || tab.tabId);
 		browser.pageAction.onClicked.addListener(clickHandler);
+
+		browser.pageAction.setIcon({
+			tabId,
+			path: icons.default,
+		});
+		browser.pageAction.show(tabId);
+	} else {
+		browser.pageAction.hide(tabId);
 	}
 }
 
 async function clickHandler(tab) {
+	const opts = await storage.get('service');
+	const handler = opts.service || defaultOpts.service;
 	const url = new URL(tab.url);
 	const feedUrl = new URL('/feeds/videos.xml', url.origin);
 
@@ -28,18 +65,36 @@ async function clickHandler(tab) {
 			throw new Error(`There is no feed for ${url.toString()}`);
 		}
 
-		browser.tabs.create({
-			url: feedUrl.toString(),
-		});
+		handlers[handler](feedUrl);
 	} catch(err) {
 		console.error(err);
 	}
 }
 
 async function refreshAllTabsPageAction() {
-	const tabs = await browser.tabs.query({});
+	const tabs = await browser.tabs.query({active: true});
 	tabs.forEach(scanTab);
 }
 
+async function updateHandler(update) {
+	if (update.temporary) {
+		storage.get().then(opts => console.log({update, opts}));
+	}
+
+	if (update.reason === 'install') {
+		storage.set(defaultOpts);
+	} else if (update.reason === 'update') {
+		/*eslint no-fallthrough: "off"*/
+		/*eslint no-case-declarations: "off"*/
+		// let opts = await storage.get();
+	}
+
+	switch (update.previousVersion) {
+	case '0.1.0':
+		storage.set(defaultOpts);
+		break;
+	}
+}
+
 browser.tabs.onUpdated.addListener(refreshAllTabsPageAction);
-browser.runtime.onInstalled.addListener(refreshAllTabsPageAction);
+browser.runtime.onInstalled.addListener(updateHandler);
