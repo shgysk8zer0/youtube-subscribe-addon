@@ -9,7 +9,7 @@
   "description": "Firefox extension to expose YouTube channel and playlist feeds",
   "homepage_url": "https://github.com/shgysk8zer0/youtube-subscribe-addon",
   "icons": {
-    "48": "img/icon-48.png"
+    "48": "img/icon.svg"
   },
   "permissions": ["tabs"],
   "page_action": {
