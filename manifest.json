@@ -11,7 +11,6 @@
   "icons": {
     "48": "img/icon.svg"
   },
-  "default_locale": "en",
   "permissions": ["tabs"],
   "page_action": {
     "default_icon": "img/icon.svg",
