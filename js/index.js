@@ -1,11 +1,11 @@
 async function scanTab(tab) {
 	const url = new URL(tab.url);
 
-	if (
+	if (url.host === 'www.youtube.com' && (
 		url.pathname.startsWith('/channel/')
 		|| url.pathname.startsWith('/user/')
 		|| url.searchParams.has('list')
-	) {
+	)) {
 		browser.pageAction.show(tab.id || tab.tabId);
 		browser.pageAction.onClicked.addListener(clickHandler);
 	}
