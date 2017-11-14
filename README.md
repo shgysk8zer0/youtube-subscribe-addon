@@ -1,7 +1,7 @@
-# youtube-subscription
+# YouTube Feeds
 
 - - -
-Displays a subscribe button in the Awesome Bar for YouTube channels
+Displays a subscribe button in the Awesome Bar for YouTube channels and playlists
 
 [![license](https://img.shields.io/github/license/shgysk8zer0/youtube-subscribe-addon.svg)](./LICENSE)
 [![Build Status](https://travis-ci.org/shgysk8zer0/youtube-subscribe-addon.svg?branch=master)](https://travis-ci.org/shgysk8zer0/youtube-subscribe-addon)
@@ -10,9 +10,9 @@ Displays a subscribe button in the Awesome Bar for YouTube channels
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/shgysk8zer0/youtube-subscribe-addon.svg)](https://github.com/shgysk8zer0/youtube-subscribe-addon/pulls)
 [![Join the chat at https://gitter.im/youtube-subscribe-addon/Lobby](https://badges.gitter.im/youtube-subscribe-addon/Lobby.svg)](https://gitter.im/youtube-subscribe-addon/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-[![Mozilla Add-on](https://img.shields.io/amo/v/youtube-subscribe-addon.svg)](https://addons.mozilla.org/en-US/firefox/addon/youtube-feeds/)
-[![Mozilla Add-on](https://img.shields.io/amo/users/youtube-subscribe-addon.svg)](https://addons.mozilla.org/en-US/firefox/addon/youtube-feeds/statistics/)
-[![Mozilla Add-on](https://img.shields.io/amo/stars/youtube-subscribe-addon.svg)](https://addons.mozilla.org/en-US/firefox/addon/youtube-feeds/reviews/)
+[![Mozilla Add-on](https://img.shields.io/amo/v/youtube-feeds.svg)](https://addons.mozilla.org/en-US/firefox/addon/youtube-feeds/)
+[![Mozilla Add-on](https://img.shields.io/amo/users/youtube-feeds.svg)](https://addons.mozilla.org/en-US/firefox/addon/youtube-feeds/statistics/)
+[![Mozilla Add-on](https://img.shields.io/amo/stars/youtube-feeds.svg)](https://addons.mozilla.org/en-US/firefox/addon/youtube-feeds/reviews/)
 
 <!--
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/nimelepbpejjlbmoobocpfnjhihnpked.svg)]()
@@ -26,9 +26,9 @@ Displays a subscribe button in the Awesome Bar for YouTube channels
 [![Twitter Follow](https://img.shields.io/twitter/follow/shgysk8zer0.svg?style=social&label=Follow)](https://twitter.com/shgysk8zer0)
 [![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=shgysk8zer0%2Fyoutube-subscribe-addon%3A+Displays+a+subscribe+button+in+the+Awesome+Bar+for+YouTube+channels&url=https%3A%2F%2Fgithub.com%2Fshgysk8zer0%2Fyoutube-subscribe-addon&original_referer=)
 
-
 ## Quick Links
 - [Contributing](./docs/CONTRIBUTING.md)
 - [Code of Conduct](./docs/CODE_OF_CONDUCT.md)
 - [GitHub](https://github.com/shgysk8zer0/youtube-subscribe-addon)
+
 
