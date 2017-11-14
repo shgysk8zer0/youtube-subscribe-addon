@@ -30,5 +30,30 @@ Displays a subscribe button in the Awesome Bar for YouTube channels and playlist
 - [Contributing](./docs/CONTRIBUTING.md)
 - [Code of Conduct](./docs/CODE_OF_CONDUCT.md)
 - [GitHub](https://github.com/shgysk8zer0/youtube-subscribe-addon)
+- [Having Issues?](#common-issues)
 
+If you've spent much time watching YouTube, you'll have noticed a couple of things.
+The algorithm is constantly changing and you will not always see the channels you
+subscribe to, and many YouTubers advise clicking the bell icon to receive notifications
+when they post new videos.
+
+Some of us want to get the full list of videos posted by YouTubers we subscribe,
+but either do not want an insane amount of notifications or we want a different
+interface to manage everything.
+
+Fortunately, YouTube has [RSS](https://en.wikipedia.org/wiki/RSS) feeds for every
+user, channel, and playlist. This add-on adds an icon in the Awesome Bar when
+visiting a user or channel page or playlist on YouTube allowing you to easily
+find this hidden and amazing feature.
+
+Not only will the RSS feed allow you to see all of what you're subscribed to, but
+it will also let you view it in a feed reader, should you choose to use one.
+
+## Common Issues
+**The icon is showing on other pages or is not functioning**
+
+Web Extensions are still being worked out in Firefox, and in 57 in particular,
+there are some uncontrollable issues with the visibility of the icon. If the icon
+is dimmer than usual, this is the cause of it, and it should be resolved by Mozilla
+within the next few weeks. If not, [file an issue](https://github.com/shgysk8zer0/youtube-subscribe-addon).
 
