@@ -5,7 +5,7 @@
     "name": "Chris Zuber",
     "url": "https://shgysk8zer0.github.io"
   },
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Firefox extension to expose YouTube channel and playlist feeds",
   "homepage_url": "https://github.com/shgysk8zer0/youtube-subscribe-addon",
   "icons": {
