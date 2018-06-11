@@ -16,6 +16,13 @@ const handlers = {
 		browser.tabs.create({
 			url: url.toString(),
 		});
+	},
+	inoreader: function(url) {
+		const inoreader = new URL('https://www.inoreader.com');
+		inoreader.searchParams.set('add_feed', url);
+		browser.tabs.create({
+			url: inoreader.toString(),
+		});
 	}
 };
 

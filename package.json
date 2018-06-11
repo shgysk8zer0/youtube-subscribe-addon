@@ -1,6 +1,6 @@
 {
   "name": "youtube-subscribe-addon",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A Firefox Add-On to add a subscribe button on YouTube into the Awesome Bar",
   "keywords": [
     "YouTube",
@@ -42,6 +42,7 @@
     "browser:stable": "web-ext run",
     "browser:beta": "web-ext run -f beta",
     "browser:nightly": "web-ext run -f nightly",
+    "start": "web-ext run",
     "test": "npm run lint:js && npm run lint:css && npm run lint:ext",
     "upload": "web-ext sign -i node_modules/ img/ rollup.config.js screenshot.png web-ext-artifacts/",
     "postinstall": "npm run git:fetch && npm run git:submodules"
