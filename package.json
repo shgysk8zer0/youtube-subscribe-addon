@@ -1,6 +1,6 @@
 {
   "name": "youtube-subscribe-addon",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A Firefox Add-On to add a subscribe button on YouTube into the Awesome Bar",
   "keywords": [
     "YouTube",
