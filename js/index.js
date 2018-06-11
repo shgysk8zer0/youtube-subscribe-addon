@@ -21,7 +21,7 @@ const handlers = {
 		const inoreader = new URL('https://www.inoreader.com');
 		inoreader.searchParams.set('add_feed', url);
 		browser.tabs.create({
-			url: feedly.toString(),
+			url: inoreader.toString(),
 		});
 	}
 };
