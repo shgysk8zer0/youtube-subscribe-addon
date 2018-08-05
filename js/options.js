@@ -59,6 +59,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
 	form.addEventListener('submit', submit => submit.preventDefault());
 	form.addEventListener('reset', reset => {
+		/* eslint no-alert: 0 */
 		if (confirm('This will clear your settings')) {
 			storage.clear();
 		} else {
@@ -66,4 +67,6 @@ window.addEventListener('DOMContentLoaded', async () => {
 		}
 	});
 	form.hidden = false;
-}, {once: true});
+}, {
+	once: true
+});

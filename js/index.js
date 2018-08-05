@@ -31,8 +31,33 @@ const icons = {
 	disabled: 'img/disabled.svg',
 };
 
+async function clickHandler(tab) {
+	const opts = await storage.get('service');
+	const handler = opts.service || defaultOpts.service;
+	const url = new URL(tab.url);
+	const feedUrl = new URL('/feeds/videos.xml', url.origin);
+
+	try {
+		if (url.pathname.startsWith('/user/')) {
+			const userId = url.pathname.split('/')[2];
+			feedUrl.searchParams.set('user', userId);
+		} else if (url.pathname.startsWith('/channel/')) {
+			const channelId = url.pathname.split('/')[2];
+			feedUrl.searchParams.set('channel_id', channelId);
+		} else if (url.searchParams.has('list')) {
+			feedUrl.searchParams.set('playlist_id', url.searchParams.get('list'));
+		} else {
+			throw new Error(`There is no feed for ${url.toString()}`);
+		}
+
+		handlers[handler](feedUrl);
+	} catch(err) {
+		/* eslint no-console: "off" */
+		console.error(err);
+	}
+}
+
 async function scanTab(tab) {
-	console.log(tab);
 	const tabId = tab.id || tab.tabId;
 	const url = new URL(tab.url);
 
@@ -58,39 +83,19 @@ async function scanTab(tab) {
 	}
 }
 
-async function clickHandler(tab) {
-	const opts = await storage.get('service');
-	const handler = opts.service || defaultOpts.service;
-	const url = new URL(tab.url);
-	const feedUrl = new URL('/feeds/videos.xml', url.origin);
-
-	try {
-		if (url.pathname.startsWith('/user/')) {
-			const userId = url.pathname.split('/')[2];
-			feedUrl.searchParams.set('user', userId);
-		} else if (url.pathname.startsWith('/channel/')) {
-			const channelId = url.pathname.split('/')[2];
-			feedUrl.searchParams.set('channel_id', channelId);
-		} else if (url.searchParams.has('list')) {
-			feedUrl.searchParams.set('playlist_id', url.searchParams.get('list'));
-		} else {
-			throw new Error(`There is no feed for ${url.toString()}`);
-		}
-
-		handlers[handler](feedUrl);
-	} catch(err) {
-		console.error(err);
-	}
-}
-
 async function refreshAllTabsPageAction() {
-	const tabs = await browser.tabs.query({active: true});
+	const tabs = await browser.tabs.query({
+		active: true
+	});
 	tabs.forEach(scanTab);
 }
 
 async function updateHandler(update) {
 	if (update.temporary) {
-		storage.get().then(opts => console.log({update, opts}));
+		const opts = await storage.get();
+		console.log({
+			update, opts
+		});
 	}
 
 	if (update.reason === 'install') {

@@ -11,20 +11,46 @@
     "plugins": ["async-await"],
     "rules": {
         "indent": [
-            2,
+            "error",
             "tab"
         ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
         "quotes": [
-            2,
+            "error",
             "single"
         ],
         "semi": [
-            2,
+            "error",
             "always"
         ],
-        "no-console": 0,
-        "async-await/space-after-async": 2,
-        "async-await/space-after-await": 2
+        "curly": 2,
+        "no-unused-vars": 1,
+        "no-use-before-define": 1,
+        "no-redeclare": 1,
+        "no-with": 1,
+        "eqeqeq": 1,
+        "no-unmodified-loop-condition": 2,
+        "strict": 2,
+        "dot-notation": 1,
+        "no-console": 1,
+        "no-alert": 1,
+        "no-useless-escape": 1,
+        "yoda": 2,
+        "brace-style": [
+          2,
+          "1tbs"
+        ],
+        "object-curly-newline": [
+          2,
+          "always"
+        ],
+        "eol-last": [
+          "error",
+          "always"
+        ]
     },
     "globals": {
         "URLSearchParams": false,
