@@ -23,6 +23,14 @@ const handlers = {
 		browser.tabs.create({
 			url: inoreader.toString(),
 		});
+	},
+	ttrss: function(url, opts) {
+		const ttrss = new URL('public.php', opts.ttrssUrl);
+		ttrss.searchParams.set('op', 'subscribe');
+		ttrss.searchParams.set('feed_url', url);
+		browser.tabs.create({
+			url: ttrss.toString(),
+		});
 	}
 };
 
@@ -32,7 +40,7 @@ const icons = {
 };
 
 async function clickHandler(tab) {
-	const opts = await storage.get('service');
+	const opts = await storage.get(['service', 'ttrssUrl']);
 	const handler = opts.service || defaultOpts.service;
 	const url = new URL(tab.url);
 	const feedUrl = new URL('/feeds/videos.xml', url.origin);
