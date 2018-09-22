@@ -5,23 +5,31 @@ const defaultOpts = {
 };
 
 const handlers = {
-	feedly: function(url) {
+	feedly: function(url, opts) {
 		const feedly = new URL('https://feedly.com/i/subscription/feed/');
 		feedly.pathname += encodeURIComponent(url.toString());
 		browser.tabs.create({
 			url: feedly.toString(),
 		});
 	},
-	rss: function(url) {
+	rss: function(url, opts) {
 		browser.tabs.create({
 			url: url.toString(),
 		});
 	},
-	inoreader: function(url) {
+	inoreader: function(url, opts) {
 		const inoreader = new URL('https://www.inoreader.com');
 		inoreader.searchParams.set('add_feed', url);
 		browser.tabs.create({
 			url: inoreader.toString(),
+		});
+	},
+	ttrss: function(url, opts) {
+		const ttrss = new URL('public.php', opts.ttrssUrl);
+		ttrss.searchParams.set('op', 'subscribe');
+		ttrss.searchParams.set('feed_url', url);
+		browser.tabs.create({
+			url: ttrss.toString(),
 		});
 	}
 };
@@ -32,7 +40,7 @@ const icons = {
 };
 
 async function clickHandler(tab) {
-	const opts = await storage.get('service');
+	const opts = await storage.get(['service', 'ttrssUrl']);
 	const handler = opts.service || defaultOpts.service;
 	const url = new URL(tab.url);
 	const feedUrl = new URL('/feeds/videos.xml', url.origin);
@@ -50,7 +58,7 @@ async function clickHandler(tab) {
 			throw new Error(`There is no feed for ${url.toString()}`);
 		}
 
-		handlers[handler](feedUrl);
+		handlers[handler](feedUrl, opts);
 	} catch(err) {
 		/* eslint no-console: "off" */
 		console.error(err);

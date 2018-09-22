@@ -11,21 +11,34 @@
 		<form name="options">
 			<fieldset>
 				<legend>Subscribe Using</legend>
+				<input type="radio" name="service" id="subscribe-rss" value="rss" checked="" />
 				<label for="subscribe-rss" class="browser-style-label" title="Select icon">
 					<img width="32" height="32" src="img/rss.svg" />
 					<span>RSS</span>
 				</label>
-				<input type="radio" name="service" id="subscribe-rss" value="rss" checked="" />
+				<br>
+
+				<input type="radio" name="service" value="feedly" id="subscribe-feedly" />
 				<label for="subscribe-feedly" class="browser-style-label" title="Select icon">
 					<img width="32" height="32" src="img/feedly.svg" />
 					<span>Feedly</span>
 				</label>
-				<input type="radio" name="service" value="feedly" id="subscribe-feedly" />
+				<br>
+
+				<input type="radio" name="service" value="inoreader" id="subscribe-inoreader" />
 				<label for="subscribe-inoreader" class="browser-style-label" title="Select icon">
 					<img width="32" height="32" src="img/inoreader.svg" />
 					<span>Inoreader</span>
 				</label>
-				<input type="radio" name="service" value="inoreader" id="subscribe-inoreader" />
+				<br>
+
+				<input type="radio" name="service" value="ttrss" id="subscribe-ttrss" data-enables="ttrssUrl" />
+				<label for="subscribe-ttrss" class="browser-style-lavel" title="Select icon">
+					<img width="32" height="32" src="img/tiny-tiny-rss.svg" />
+					<span>Tiny Tiny RSS</span>
+				</label>
+				<input name="ttrssUrl" id="ttrss-url" type="url" placeholder="https://ttrss-server.com" />
+				<br>
 			</fieldset>
 		</form>
 	</body>
